@@ -1,0 +1,28 @@
+#one {
+background-color: red;
+}
+#two {background-color: blue;}
+
+div{
+	width: 100px;
+	float: left;
+}
+
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+
+	/*margin: 10px;*/
+}
+h1 {
+	font-family: Raleway;
+	font-size: 24px;
+	margin-left: 1.66%;
+	padding-bottom: 1.66%;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-bottom: 1px #f1f1f1 solid;
+	width: 30%
+}
+

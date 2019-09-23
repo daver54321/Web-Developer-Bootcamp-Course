@@ -1,0 +1,31 @@
+p {
+	font-family: arial;
+	font-size: 2.0em;
+	font-weight: 800;
+	line-height: 2.0;
+	text-decoration: underline;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-family: 'Indie Flower';
+}
+
+h1 {
+	font-size: 25px;
+	text-align: right;
+}
+
+span {
+	font-size: 0.8em;
+}
+
+body {
+	font-size: 10px;
+}
+
+
+/*Google Fonts:
+font-family: 'Raleway', sans-serif;
+font-family: 'Indie Flower', cursive;*/
