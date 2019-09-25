@@ -1,3 +1,11 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
     background-color: #232323;
     font-family: 'Merriweather', serif;
@@ -6,17 +14,16 @@ body {
 }
 
 .square {
-    width: 30%;
-    padding-bottom: 30%;
-    float: left;
-    margin: 1.66%;
-    border-radius: 10%;
-    transition: padding 0.4s;
-    transition: width 0.4s;
+    width: 90%;
+    padding-bottom: 90%;
+    border-radius: 5%;
+    margin: 5%;
+    transition: border 0.2s;
+    transition: opacity 0.4s;
 }
 
 #container {
-    max-width: 600px;
+    max-width: 750px;
     margin: 0.5rem auto;
     /* padding: 20px; */
 }
