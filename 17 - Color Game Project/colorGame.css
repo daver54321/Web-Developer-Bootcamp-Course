@@ -16,15 +16,21 @@ body {
 .square {
     width: 90%;
     padding-bottom: 90%;
+    border: .1em solid white;
     border-radius: 5%;
     margin: 5%;
     transition: border 0.2s;
     transition: opacity 0.4s;
 }
 
-#container {
+input [type=button] :disabled {
+    opacity: 0.1;
+}
+
+.grid {
     max-width: 750px;
     margin: 0.5rem auto;
+    
     /* padding: 20px; */
 }
  
@@ -33,21 +39,40 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
+    text-align: center;
+    width: auto;
 }
 
 h1 {
     font-size: 2.5rem;
 }
 
-/* #rgbTitle {
-    font-size: 4em;
-    color: red;
-} */
-
 .header {
     margin: 0;
     background-color: #4875c9;
-    width: auto;
+    
     padding: 0;
-    text-align: center;
+    
+}
+
+.nav-pills {
+    color: #4875c9;
+    background-color: white;
+}
+
+div {
+    border: 1px solid red;
+}
+
+.container {
+    max-width: 750px;
+    padding: 0;
+}
+
+.navbar-text {
+    padding: 0;
+}
+
+.navbar {
+    padding: 0;
 }
