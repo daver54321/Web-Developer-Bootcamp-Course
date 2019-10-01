@@ -5,13 +5,22 @@ var winner;
 var lowerLimitArray;
 var upperLimitArray;
 
+SetDifficulty("Easy");
+var buttons = document.querySelectorAll(".difficulty");
+buttons.forEach(element => {
+    this.addEventListener("click", function () {
+        SetDifficulty(this.textContent);
+    })
+
+});
+
 Reset();
 
 function Reset() {
     //Populate array containing square values
     squareValues = new Array();
     for (let index = 0; index < 6; index++) {
-        const color = RandomColor("easy");
+        const color = RandomColor();
         squareValues[index] = new Object();
         squareValues[index].R = color.R;
         squareValues[index].G = color.G;
@@ -71,14 +80,23 @@ function ClickSquare(clickedSquare) {
 }
 
 function SetDifficulty(setting) {
-    if (setting === "easy") {
+    if (setting === "Easy") {
         lowerLimitArray = [0];
         upperLimitArray = [255];
-    } else if (setting === "medium") {
+        document.getElementById("easyButton").classList.add("active");
+        document.getElementById("mediumButton").classList.remove("active");
+        document.getElementById("hardButton").classList.remove("active");
+    } else if (setting === "Medium") {
         lowerLimitArray = [0, 128];
         upperLimitArray = [127, 255];
-    } else if (setting === "hard") {
+        document.getElementById("easyButton").classList.remove("active");
+        document.getElementById("mediumButton").classList.add("active");
+        document.getElementById("hardButton").classList.remove("active");
+    } else if (setting === "Hard") {
         lowerLimitArray = [0, 64, 128, 192];
         upperLimitArray = [63, 127, 191, 255];
+        document.getElementById("easyButton").classList.remove("active");
+        document.getElementById("mediumButton").classList.remove("active");
+        document.getElementById("hardButton").classList.add("active");
     }
 }
