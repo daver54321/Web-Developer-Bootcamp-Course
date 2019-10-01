@@ -2,6 +2,8 @@
 var squareValues;
 var squares = document.querySelectorAll(".square");
 var winner;
+var lowerLimitArray;
+var upperLimitArray;
 
 Reset();
 
@@ -9,7 +11,7 @@ function Reset() {
     //Populate array containing square values
     squareValues = new Array();
     for (let index = 0; index < 6; index++) {
-        const color = RandomColor();
+        const color = RandomColor("easy");
         squareValues[index] = new Object();
         squareValues[index].R = color.R;
         squareValues[index].G = color.G;
@@ -42,7 +44,18 @@ function RandomColor() {
         B: 0,
     };
     for (let index = 0; index < 3; index++) {
-        finalAnswer[Object.keys(finalAnswer)[index]] = Math.floor(255 * Math.random());
+        // Uses 1, 2, or 4 sections of 0-255 colorspace, with an "lower" and
+        // "upper" bound. Adds "change" to lower bound---or subtracts "change"
+        // from upper bounds---to create RGB triplet that is easy, medium or hard
+        var arraySection = Math.floor(Math.random() * lowerLimitArray.length);
+        var change = Math.floor(Math.random() * 32);
+        if ((Math.random() * 2) < 1) {
+            //Starting from the "lower" end of a section of 0-255 colorspace
+            finalAnswer[Object.keys(finalAnswer)[index]] = lowerLimitArray[arraySection] + change;
+        } else {
+            // Starting from the "upper" end of a section of 0-255 colorspace
+            finalAnswer[Object.keys(finalAnswer)[index]] = upperLimitArray[arraySection] - change;
+        }
     }
     return finalAnswer;
 }
@@ -55,4 +68,17 @@ function ClickSquare(clickedSquare) {
         alert("This isn't the winner.");
     }
 
+}
+
+function SetDifficulty(setting) {
+    if (setting === "easy") {
+        lowerLimitArray = [0];
+        upperLimitArray = [255];
+    } else if (setting === "medium") {
+        lowerLimitArray = [0, 128];
+        upperLimitArray = [127, 255];
+    } else if (setting === "hard") {
+        lowerLimitArray = [0, 64, 128, 192];
+        upperLimitArray = [63, 127, 191, 255];
+    }
 }
