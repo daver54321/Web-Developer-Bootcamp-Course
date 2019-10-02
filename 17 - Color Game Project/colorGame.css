@@ -20,7 +20,7 @@ body {
     border-radius: 5%;
     margin: 5%;
     transition: border 0.2s;
-    transition: opacity 0.4s;
+    transition: opacity 0.5s;
 }
 
 input [type=button] :disabled {
@@ -50,7 +50,7 @@ h1 {
 .header {
     margin: 0;
     background-color: #4875c9;
-    
+    transition: background-color 0.5s;
     padding: 0;
     
 }

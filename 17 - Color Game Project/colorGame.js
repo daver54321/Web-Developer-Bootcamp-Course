@@ -35,17 +35,21 @@ function Reset() {
         squareValues[index].Winner = false;
     }
 
-    //Create "Winner" color and update corresponding squareValue
+    // Create "Winner" color and update corresponding squareValue
     winner = Math.floor(Math.random() * 6);
     squareValues[winner].Winner = true;
 
-    //Manipulate DOM style.backgroundColor
+    // Manipulate DOM style.backgroundColor
     for (let index = 0; index < squares.length; index++) {
         squares[index].style.backgroundColor = squareValues[index].rgbText;
+        squares[index].style.opacity = 1.0;
     }
 
 
+    // Initialize some cosmetic stuff
+    document.querySelector(".header").style.backgroundColor = "#4875c9";
     document.getElementById("rgbTitle").textContent = squareValues[winner].rgbText;
+    document.querySelector(".navbar-text .nav-link").textContent = "Click on the color that matches the RGB triplet above."
 
 }
 
@@ -98,7 +102,7 @@ function CreateRangeArray(index) {
     for (const key in arrayObject) {
         if (arrayObject.hasOwnProperty(key)) {
             const color = arrayObject[key];
-            
+
             // Uses 1, 2, or 4 sections of 0-255 colorspace, with an "lower" and
             // "upper" bound. Adds "change" to lower bound---or subtracts "change"
             // from upper bounds---to create RGB triplet that is easy, medium or hard
@@ -125,11 +129,26 @@ function CreateRangeArray(index) {
 
 function ClickSquare(clickedSquare) {
     if (squareValues[clickedSquare].Winner === true) {
-        document.get
+        isWinner(clickedSquare);
+        for (let index = 0; index < squareValues.length; index++) {
+            if (!squareValues[index].Winner) {
+                notWinner(index);
+            }
+        }
     } else {
-        alert("This isn't the winner.");
+        notWinner(clickedSquare);
+        document.querySelector(".navbar-text .nav-link").textContent = "Nope. Not that one...";
     }
+}
 
+function isWinner(index) {
+    document.querySelector(".header").style.backgroundColor = squareValues[index].rgbText;
+    document.querySelector(".navbar-text .nav-link").textContent = "Hey! You got it!";
+}
+
+function notWinner(index) {
+    squares[index].style.opacity = 0;
+    // squares[index].style.border = "0px solid white";
 }
 
 function SetDifficulty(setting) {
