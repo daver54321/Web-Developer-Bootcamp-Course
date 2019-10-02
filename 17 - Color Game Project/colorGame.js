@@ -144,7 +144,6 @@ function ClickSquare(clickedSquare) {
 
 function isWinner(index) {
     document.querySelector(".header").style.backgroundColor = squareValues[index].rgbText;
-    // var contrastRGB = "rgb(" + (255-squareValues[index].ValueArray.R) +", " + (255-squareValues[index].ValueArray.G) + ", " + (255-squareValues[index].ValueArray.B) + ")";
     if (Math.min(squareValues[index].ValueArray.R, squareValues[index].ValueArray.G, squareValues[index].ValueArray.B) > 120) {
         document.querySelector(".title-container").style.color = "black";
     }
