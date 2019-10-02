@@ -48,8 +48,9 @@ function Reset() {
 
     // Initialize some cosmetic stuff
     document.querySelector(".header").style.backgroundColor = "#4875c9";
+    document.querySelector(".title-container").style.color = "white";
     document.getElementById("rgbTitle").textContent = squareValues[winner].rgbText;
-    document.querySelector(".navbar-text .nav-link").textContent = "Click on the color that matches the RGB triplet above."
+    document.getElementById("guideText").textContent = "Click on the color that matches the RGB triplet above."
 
 }
 
@@ -137,13 +138,22 @@ function ClickSquare(clickedSquare) {
         }
     } else {
         notWinner(clickedSquare);
-        document.querySelector(".navbar-text .nav-link").textContent = "Nope. Not that one...";
+        document.getElementById("guideText").textContent = "Nope. Not that one...";
     }
 }
 
 function isWinner(index) {
     document.querySelector(".header").style.backgroundColor = squareValues[index].rgbText;
-    document.querySelector(".navbar-text .nav-link").textContent = "Hey! You got it!";
+    // var contrastRGB = "rgb(" + (255-squareValues[index].ValueArray.R) +", " + (255-squareValues[index].ValueArray.G) + ", " + (255-squareValues[index].ValueArray.B) + ")";
+    if (Math.min(squareValues[index].ValueArray.R, squareValues[index].ValueArray.G, squareValues[index].ValueArray.B) > 120) {
+        document.querySelector(".title-container").style.color = "black";
+    }
+    
+    document.getElementById("guideText").textContent = "Hey! You got it!";
+
+    document.getElementById("easyButton").classList.remove("active");
+    document.getElementById("mediumButton").classList.remove("active");
+    document.getElementById("hardButton").classList.remove("active");
 }
 
 function notWinner(index) {

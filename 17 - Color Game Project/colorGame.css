@@ -34,13 +34,14 @@ input [type=button] :disabled {
     /* padding: 20px; */
 }
  
-.title {
+.title-container {
     color: white;
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
     width: auto;
+    transition: color 0.5s;
 }
 
 h1 {
@@ -61,7 +62,7 @@ h1 {
 }
 
 div {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .container {
