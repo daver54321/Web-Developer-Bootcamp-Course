@@ -1,0 +1,84 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    background-color: #232323;
+    font-family: 'Merriweather', serif;
+    padding: 0;
+    margin: 0;
+}
+
+.square {
+    width: 90%;
+    padding-bottom: 90%;
+    border: .1em solid white;
+    border-radius: 5%;
+    margin: 5%;
+    transition: border 0.2s;
+    transition: opacity 0.5s;
+}
+
+input [type=button] :disabled {
+    opacity: 0.1;
+}
+
+.grid {
+    max-width: 768px;
+    margin: 0.5rem auto;
+    
+    /* padding: 20px; */
+}
+ 
+.title-container {
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    width: auto;
+    transition: color 0.5s;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.header {
+    margin: 0;
+    background-color: #4875c9;
+    transition: background-color 0.5s;
+    padding: 0;
+    
+}
+
+.nav-pills .nav-link {
+    color: #4875c9;
+    background-color: white;
+}
+
+.nav-pills .nav-link.active {
+    color: white;
+    background-color: #4875c9;
+}
+
+div {
+    /* border: 1px solid red; */
+}
+
+.container {
+    max-width: 768px;
+    padding: 0;
+}
+
+.navbar-text {
+    padding: 0;
+}
+
+.navbar {
+    padding: 5px 0;
+}
