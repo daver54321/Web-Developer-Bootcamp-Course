@@ -50,7 +50,7 @@ function Reset() {
     document.querySelector(".header").style.backgroundColor = "#4875c9";
     document.querySelector(".title-container").style.color = "white";
     document.getElementById("rgbTitle").textContent = squareValues[winner].rgbText;
-    document.getElementById("guideText").textContent = "Click on the color that matches the RGB triplet above."
+    document.getElementById("guideText").textContent = "Click on the color that matches the RGB triplet above"
 
 }
 
