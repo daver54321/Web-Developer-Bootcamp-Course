@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Effects</title>
+
+    <style type="text/css">
+    div {
+        width: 100px;
+        height: 100px;
+        background: teal;
+        float: left;
+        margin: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div>Please don't fade me!</div>
+    <div>Agh!  It hurts!</div>
+    <div>Help!!!!</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    // $('div').on('click', function(){
+    //     $(this).fadeOut(2000);
+    //     console.log("Fade Completed");
+    // });
+
+    $('div').on('click', function(){
+        $(this).slideToggle(2000);
+        console.log("Slide Completed");
+    });
+    
+
+</script>
+
+</html>
