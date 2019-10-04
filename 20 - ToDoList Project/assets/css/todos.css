@@ -19,6 +19,8 @@ body {
 .header {
     margin: 0;
     padding: 0;
+    background-color: #dddddd;
+    border-bottom: 2px solid rgb(61, 61, 61);
 }
 
 h1 {
@@ -44,20 +46,26 @@ input {
     display: inline-block;
   vertical-align: middle;
   height: 40px;
+  transition: 0.4s;
 }
 
 .fa-plus-square {
-    font-size: 40px;
+    font-size: 30px;
     color: #2980b9;
     display: inline-block;
   vertical-align: middle;
+  text-align: center;
+  
+  width: 40px;
+  margin: 0;
+  padding: 0;
 }
 
 .fa-plus-square:hover {
     color: rgb(61, 61, 61);
 }
 
-input:focus {
+input:hover, input:focus {
     background-color: white;
     border: 3px solid #2980b9;
     outline: none;
@@ -65,9 +73,20 @@ input:focus {
 
 span {
     background-color: red;
-    color: rgb(61, 61, 61);
+    color: white;
+    height: 40px;
+    width: 0;
+    margin-right: 20px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.4s;
+    opacity: 0;
 }
 
+li:hover span {
+    width: 40px;
+    opacity: 1.0;
+}
 ul {
     list-style: none;
     margin: 0;
@@ -79,7 +98,7 @@ li {
     height: 40px;
     line-height: 40px;
     color: rgb(61, 61, 61);
-    padding-left: 23px;
+    /* padding-left: 23px; */
 
 }
 
@@ -89,9 +108,9 @@ li:nth-child(2n) {
 
 .container {
     width: 360px;
-    margin: 100px auto;
+    margin: 50px auto;
     background-color: #f7f7f7;
-    box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+    box-shadow: 5px 5px 3px rgba(0,0,0, 0.3);
     border: none;
 }
 

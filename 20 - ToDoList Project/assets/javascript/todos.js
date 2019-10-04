@@ -15,12 +15,13 @@ $("ul").on('click', 'span', function(event) {
 // Listener for 'enter' key on input
 $('input[type=text]').keypress(function(event) {
     if(event.which === 13) {
-        $("#list").prepend(`<li><span>X</span> ${this.value}</li>`);
+        addItemToList()
     }
 })
 
 function addItemToList () {
-    
+    $("#list").prepend(`<li><span><i class="far fa-trash-alt"></i></span> ${$('input').val()}</li>`);
+    $('input').val("");
 }
 
 
