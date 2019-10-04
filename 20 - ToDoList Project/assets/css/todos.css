@@ -1,0 +1,120 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+
+
+  }
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #ad5389;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
+    border-bottom: 2px solid rgb(61, 61, 61);
+}
+
+h1 {
+    background-color: #2980b9;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+
+input {
+    font-size: 18px;
+    background-color: #dddddd;
+    width: 320px;
+    margin: 0;
+    padding: 10px 20px;
+    color: #2980b9;
+    outline: none;
+    border: 3px solid #dddddd;
+    display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  transition: 0.4s;
+}
+
+.fa-plus-square {
+    font-size: 30px;
+    color: #2980b9;
+    display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  
+  width: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-plus-square:hover {
+    color: rgb(61, 61, 61);
+}
+
+input:hover, input:focus {
+    background-color: white;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+span {
+    background-color: red;
+    color: white;
+    height: 40px;
+    width: 0;
+    margin-right: 20px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+li:hover span {
+    width: 40px;
+    opacity: 1.0;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(61, 61, 61);
+    /* padding-left: 23px; */
+
+}
+
+li:nth-child(2n) {
+    background-color: #dddddd;
+}
+
+.container {
+    width: 360px;
+    margin: 50px auto;
+    background-color: #f7f7f7;
+    box-shadow: 5px 5px 3px rgba(0,0,0, 0.3);
+    border: none;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
